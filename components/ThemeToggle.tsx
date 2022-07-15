@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useContext } from "react";
 import { BiMoon, BiSun } from "react-icons/bi";
 import { ThemeContext } from "../contexts/ThemeContext";
+
 export const ThemeToggle = () => {
   const { theme, setTheme } = useContext(ThemeContext);
   const toggleTheme = () => {
@@ -12,18 +13,18 @@ export const ThemeToggle = () => {
     }
   };
 
-  const primaryHsl =
-    theme === "light" ? "hsl(219, 13%, 69%)" : "hsl(0, 0%, 0%)";
   return (
     <motion.button
-      className="text-2xl text-primary"
+      className={`text-2xl rounded-full w-10 h-10 flex items-center justify-center bg-base-200`}
       onClick={() => toggleTheme()}
       whileHover={{
-        color: [primaryHsl, "hsl(55, 94%, 37%)"],
-        scale: 1.2,
-        transition: { duration: 0.4 },
+        color: ["hsl(219, 13%, 69%)", "hsl(48, 100%, 68%)"],
+        scale: 1.1,
+
+        transition: { duration: 0.25 },
       }}
-      whileTap={{ scale: 0.9 }}
+      whileTap={{ scale: 0.9, translateY: 1 }}
+      transition={{ type: "spring", stiffness: 100, damping: 10, mass: 1 }}
     >
       {theme === "dark" ? <BiSun /> : <BiMoon />}
     </motion.button>

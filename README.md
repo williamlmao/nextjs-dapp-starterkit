@@ -15,3 +15,7 @@
 - Framer motion set up
 - Sets up persistent layout patterns
 - Adds additional folder structure. Lib, etc.
+
+# Adjusting Layout
+
+- Change header height in tailwind.config.js

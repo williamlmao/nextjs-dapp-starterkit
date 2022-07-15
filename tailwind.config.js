@@ -1,4 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+
+const headerHeight = "80px";
+
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
@@ -7,7 +10,20 @@ module.exports = {
     "node_modules/daisyui/dist/**/*.js",
   ],
   theme: {
-    extend: {},
+    extend: {
+      height: {
+        header: headerHeight,
+      },
+      top: {
+        header: "500px",
+      },
+      width: {
+        sidebar: "200px",
+      },
+      padding: {
+        header: headerHeight,
+      },
+    },
   },
-  plugins: [require("daisyui")],
+  plugins: [require("daisyui"), require("@tailwindcss/typography")],
 };

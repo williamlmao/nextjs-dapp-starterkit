@@ -14,7 +14,7 @@ export const PrimaryLayout: FC<Props> = ({ children }) => {
     <Theme dataTheme={theme} className="h-screen">
       <div>
         <Header />
-        <div className="pt-[100px]">{children}</div>
+        <div className="pt-header">{children}</div>
       </div>
     </Theme>
   );
