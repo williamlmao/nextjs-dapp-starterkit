@@ -4,9 +4,8 @@ import type { NextPageWithLayout } from "./_app";
 
 const Page: NextPageWithLayout = () => {
   return (
-    <div className="w-full text-center">
-      <div className="h-[4000px]">Hi</div>
-      <h1>HELLOOO</h1>
+    <div className="w-full text-left">
+      <h1>This is the dashboard</h1>
     </div>
   );
 };

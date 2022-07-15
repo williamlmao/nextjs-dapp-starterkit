@@ -1,14 +1,13 @@
-import "../styles/globals.css";
+import { getDefaultWallets, RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import "@rainbow-me/rainbowkit/styles.css";
+import { NextPage } from "next";
 import type { AppProps } from "next/app";
 import { ReactElement, ReactNode } from "react";
-import { RainbowKitProvider, getDefaultWallets } from "@rainbow-me/rainbowkit";
 import { chain, configureChains, createClient, WagmiConfig } from "wagmi";
 import { alchemyProvider } from "wagmi/providers/alchemy";
 import { publicProvider } from "wagmi/providers/public";
-import { NextPage } from "next";
-import { useEffect } from "react";
 import { ThemeContextProvider } from "../contexts/ThemeContext";
+import "../styles/globals.css";
 
 const { chains, provider, webSocketProvider } = configureChains(
   [
@@ -29,7 +28,7 @@ const { chains, provider, webSocketProvider } = configureChains(
 );
 
 const { connectors } = getDefaultWallets({
-  appName: "RainbowKit App",
+  appName: "Starter Kit",
   chains,
 });
 

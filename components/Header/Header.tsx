@@ -1,6 +1,7 @@
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import Link from "next/link";
 import { ThemeToggle } from "../ThemeToggle";
+import { Nav } from "./Nav";
 
 // Header height is controlled by the theme in tailwind.config.js
 
@@ -9,27 +10,12 @@ export const Header = () => {
     <div
       className={`flex items-center justify-between shadow-md p-4 fixed w-full bg-base-100 z-10 h-header`}
     >
-      <div className="text-3xl ">Logo</div>
-
-      <nav>
-        <ul className="flex ">
-          <li className="mx-4">
-            <Link href="/">
-              <a>Home</a>
-            </Link>
-          </li>
-          <li className="mx-4">
-            <Link href="/dashboard">
-              <a>Dashboard</a>
-            </Link>
-          </li>
-          <li className="mx-4">
-            <Link href="/profile">
-              <a>Profile</a>
-            </Link>
-          </li>
-        </ul>
-      </nav>
+      <Link href="/">
+        <span className="text-3xl font-extrabold hover:cursor-pointer">
+          Logo
+        </span>
+      </Link>
+      <Nav />
       <div className="flex">
         <ThemeToggle />
         <div className="ml-4">

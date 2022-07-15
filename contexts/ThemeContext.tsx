@@ -1,4 +1,4 @@
-import React, { FC, createContext } from "react";
+import React, { FC, createContext, useEffect } from "react";
 
 interface Props {
   children: React.ReactNode;
@@ -12,12 +12,26 @@ interface ThemeContextInterface {
 }
 
 export const ThemeContext = createContext<ThemeContextInterface>({
-  theme: "light",
+  theme: "dark",
   setTheme: () => undefined,
 });
 
+const getThemeFromLocalStorage = () => {
+  if (typeof window !== "undefined") {
+    const localStorageTheme = localStorage.getItem("theme");
+    return localStorageTheme;
+  }
+};
+
 export const ThemeContextProvider: FC<Props> = ({ children }) => {
-  const [theme, setTheme] = React.useState<Theme>("light");
+  const [theme, setTheme] = React.useState<Theme>("dark");
+
+  useEffect(() => {
+    const localStorageTheme = getThemeFromLocalStorage();
+    if (localStorageTheme) {
+      setTheme(localStorageTheme as Theme);
+    }
+  }, []);
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>

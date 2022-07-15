@@ -11,7 +11,7 @@ export const PrimaryLayout: FC<Props> = ({ children }) => {
   const { theme } = useContext(ThemeContext);
 
   return (
-    <Theme dataTheme={theme} className="h-screen">
+    <Theme dataTheme={theme} className="min-h-screen">
       <div>
         <Header />
         <div className="pt-header">{children}</div>

@@ -39,7 +39,7 @@ export const Sidebar = () => {
 
   return (
     <motion.div
-      className="h-screen sticky top-[80px] overflow-x-hidden border-r-2  border-base-200"
+      className="h-screen fixed top-[80px] overflow-x-hidden border-r-2 bg-base-100 border-base-200"
       animate="rest"
       initial="rest"
       variants={sidebarMotion}

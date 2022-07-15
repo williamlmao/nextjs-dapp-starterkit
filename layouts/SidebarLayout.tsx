@@ -1,7 +1,4 @@
-import { Header } from "../components/Header";
-import { FC, useContext } from "react";
-import { Theme } from "react-daisyui";
-import { ThemeContext } from "../contexts/ThemeContext";
+import { FC } from "react";
 import { Sidebar } from "../components/Sidebar";
 import { PrimaryLayout } from "../layouts/PrimaryLayout";
 
@@ -14,7 +11,9 @@ export const SidebarLayout: FC<Props> = ({ children }) => {
     <PrimaryLayout>
       <div className="flex w-full">
         <Sidebar />
-        {children}
+        <div className="pl-[60px] w-full">
+          <div className="p-8 w-full">{children}</div>
+        </div>
       </div>
     </PrimaryLayout>
   );

@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-
+const defaultTheme = require("tailwindcss/defaultTheme");
 const headerHeight = "80px";
 
 module.exports = {
@@ -11,15 +11,13 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["Inter", ...defaultTheme.fontFamily.sans],
+      },
       height: {
         header: headerHeight,
       },
-      top: {
-        header: "500px",
-      },
-      width: {
-        sidebar: "200px",
-      },
+
       padding: {
         header: headerHeight,
       },
