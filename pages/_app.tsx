@@ -3,12 +3,14 @@ import "@rainbow-me/rainbowkit/styles.css";
 import { NextPage } from "next";
 import type { AppProps } from "next/app";
 import { ReactElement, ReactNode } from "react";
+import { QueryClient, QueryClientProvider } from "react-query";
 import { chain, configureChains, createClient, WagmiConfig } from "wagmi";
 import { alchemyProvider } from "wagmi/providers/alchemy";
 import { publicProvider } from "wagmi/providers/public";
 import { ThemeContextProvider } from "../contexts/ThemeContext";
 import "../styles/globals.css";
 
+const queryClient = new QueryClient();
 const { chains, provider, webSocketProvider } = configureChains(
   [
     chain.mainnet,
@@ -54,7 +56,9 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
     <WagmiConfig client={wagmiClient}>
       <ThemeContextProvider>
         <RainbowKitProvider chains={chains}>
-          {getLayout(<Component {...pageProps} />)}
+          <QueryClientProvider client={queryClient}>
+            {getLayout(<Component {...pageProps} />)}
+          </QueryClientProvider>
         </RainbowKitProvider>
       </ThemeContextProvider>
     </WagmiConfig>

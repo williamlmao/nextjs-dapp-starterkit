@@ -9,7 +9,7 @@ const Page: NextPageWithLayout = () => {
     <div className="flex flex-col items-center justify-center h-screen ">
       <div className="prose text-center -translate-y-1/2">
         <h1 className="">This is your homepage</h1>
-        <p>
+        <p className="font-inter">
           This page is using the primary layout, which is just the header. For
           an example of a nested layout, go to Dashboard.
         </p>

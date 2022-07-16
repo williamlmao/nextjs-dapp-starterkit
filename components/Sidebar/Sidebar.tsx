@@ -6,12 +6,19 @@ import {
   AiOutlineHome,
   AiOutlineDashboard,
   AiOutlineUser,
+  AiOutlineCamera,
 } from "react-icons/ai";
 
 const links = [
   { name: "Home", to: "/", id: 1, icon: <AiOutlineHome /> },
   { name: "Dashboard", to: "/dashboard", id: 2, icon: <AiOutlineDashboard /> },
-  { name: "Profile", to: "/profile", id: 3, icon: <AiOutlineUser /> },
+  {
+    name: "Gallery (SSR)",
+    to: "/galleryssr",
+    id: 3,
+    icon: <AiOutlineCamera />,
+  },
+  { name: "Profile", to: "/profile", id: 4, icon: <AiOutlineUser /> },
 ];
 
 const sidebarMotion = {
@@ -39,7 +46,7 @@ export const Sidebar = () => {
 
   return (
     <motion.div
-      className="h-screen fixed top-[80px] overflow-x-hidden border-r-2 bg-base-100 border-base-200"
+      className="h-screen fixed top-[80px] overflow-x-hidden border-r-2 bg-base-100 border-base-200 z-10"
       animate="rest"
       initial="rest"
       variants={sidebarMotion}
