@@ -5,6 +5,7 @@ import Image from "next/image";
 import { GetServerSideProps } from "next";
 import { Picture } from "../modules/gallery/types";
 import { GalleryCard } from "../modules/gallery/components/GalleryCard";
+import Head from "next/head";
 
 // Define type animals which is an array of objects
 type Props = {
@@ -12,13 +13,25 @@ type Props = {
 };
 
 const Page: NextPageWithLayout = (props: Props) => {
+  <Head>
+    <title>Gallery (Server Side Rendered)</title>
+    <meta
+      property="og:title"
+      content="Gallery (Client Side Rendered)"
+      key="title"
+    />
+    <meta
+      name="description"
+      content="A gallery of photos which are client side rendered. Used for comparison with the SSR gallery."
+    />
+  </Head>;
   return (
     <div className="w-full text-left">
       <h1>This is a server side rendered gallery</h1>
-      <div className="grid grid-cols-1 grid-gap-4">
-        {props.pictures.map((picture) => {
-          return <GalleryCard key={picture.id} picture={picture} />;
-        })}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 grid-gap-4">
+        {props.pictures.map((picture) => (
+          <GalleryCard key={picture.id} picture={picture} />
+        ))}
       </div>
     </div>
   );

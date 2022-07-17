@@ -13,7 +13,7 @@ export const InfiniteGrid = ({
 }) => {
   return (
     <InfiniteScroll hasMore={hasNextPage} loadMore={fetchNextPage}>
-      <div className="grid grid-cols-1 grid-gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 grid-gap-4">
         {pictures.map((picture) => (
           <GalleryCard key={picture.id} picture={picture} />
         ))}

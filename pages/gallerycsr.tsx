@@ -4,12 +4,25 @@ import { useInfiniteGallery } from "../modules/gallery/hooks/useInfiniteGallery"
 import type { NextPageWithLayout } from "./_app";
 import { GalleryCard } from "../modules/gallery/components/GalleryCard";
 import { InfiniteGrid } from "../modules/gallery/components/InfiniteGrid";
+import Head from "next/head";
 
 const Page: NextPageWithLayout = () => {
   const { pictures, hasNextPage, fetchNextPage } = useInfiniteGallery();
 
   return (
     <div className="w-full text-left">
+      <Head>
+        <title>Gallery (Client Side Rendered)</title>
+        <meta
+          property="og:title"
+          content="Gallery (Client Side Rendered)"
+          key="title"
+        />
+        <meta
+          name="description"
+          content="A gallery of photos which are client side rendered. Used for comparison with the SSR gallery."
+        />
+      </Head>
       <h1>This is a client side rendered gallery</h1>
       <InfiniteGrid
         hasNextPage={hasNextPage}

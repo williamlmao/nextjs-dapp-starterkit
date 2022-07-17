@@ -3,8 +3,8 @@ import { Picture } from "../types";
 
 export const GalleryCard = ({ picture }: { picture: Picture }) => {
   return (
-    <div className="flex flex-col items-center justify-center bg-base-200 p-4 rounded-md my-4">
-      <div className="w-[160px] h-[90px] md:w-[640px] md:h-[360px] xl:w-[1280px] xl:h-[720px] relative">
+    <div className="flex flex-col items-center justify-center bg-base-200 p-4 rounded-md my-4 w-full h-full">
+      <div className="w-full h-full min-h-[100px] lg:min-h-[300px] relative">
         {picture ? (
           <Image
             src={picture.download_url}

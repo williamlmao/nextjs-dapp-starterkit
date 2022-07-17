@@ -16,6 +16,11 @@
 - Sets up persistent layout patterns
 - Adds additional folder structure. Lib, etc.
 
+# Examples contained in this starter kit
+
+- Nested layouts
+- Infinite scrolling galleries
+
 # Adjusting Layout
 
 - Change header height in tailwind.config.js

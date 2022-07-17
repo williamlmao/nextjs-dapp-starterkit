@@ -7,6 +7,7 @@ import {
   AiOutlineDashboard,
   AiOutlineUser,
   AiOutlineCamera,
+  AiFillCamera,
 } from "react-icons/ai";
 
 const links = [
@@ -18,7 +19,13 @@ const links = [
     id: 3,
     icon: <AiOutlineCamera />,
   },
-  { name: "Profile", to: "/profile", id: 4, icon: <AiOutlineUser /> },
+  {
+    name: "Gallery (CSR)",
+    to: "/gallerycsr",
+    id: 4,
+    icon: <AiFillCamera />,
+  },
+  { name: "Profile", to: "/profile", id: 5, icon: <AiOutlineUser /> },
 ];
 
 const sidebarMotion = {
@@ -71,7 +78,7 @@ export const Sidebar = () => {
                 <motion.span
                   variants={itemMotion}
                   transition={{ duration: 0.25 }}
-                  className="text-base"
+                  className="text-base whitespace-nowrap"
                 >
                   {name}
                 </motion.span>

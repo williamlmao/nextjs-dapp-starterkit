@@ -18,6 +18,7 @@ export const ThemeToggle = () => {
   return (
     <motion.button
       className={`text-2xl rounded-full w-10 h-10 flex items-center justify-center bg-base-200`}
+      aria-label="toggle-theme"
       onClick={() => toggleTheme()}
       whileHover={{
         color: ["hsl(219, 13%, 69%)", "hsl(48, 100%, 68%)"],

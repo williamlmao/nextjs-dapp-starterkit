@@ -5,6 +5,10 @@ const nextConfig = {
   images: {
     domains: ["unsplash.com", "picsum.photos"],
   },
+  i18n: {
+    locales: ["en"],
+    defaultLocale: "en",
+  },
 };
 
 module.exports = nextConfig;
