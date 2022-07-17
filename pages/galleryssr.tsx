@@ -1,18 +1,11 @@
+import { GetServerSideProps } from "next";
+import Head from "next/head";
 import type { ReactElement } from "react";
 import { SidebarLayout } from "../layouts/SidebarLayout";
-import type { NextPageWithLayout } from "./_app";
-import Image from "next/image";
-import { GetServerSideProps } from "next";
-import { Picture } from "../modules/gallery/types";
 import { GalleryCard } from "../modules/gallery/components/GalleryCard";
-import Head from "next/head";
+import { Picture } from "../modules/gallery/types";
 
-// Define type animals which is an array of objects
-type Props = {
-  pictures: Picture[];
-};
-
-const Page: NextPageWithLayout = (props: Props) => {
+const Page = ({ pictures }: { pictures: Picture[] }) => {
   <Head>
     <title>Gallery (Server Side Rendered)</title>
     <meta
@@ -29,7 +22,7 @@ const Page: NextPageWithLayout = (props: Props) => {
     <div className="w-full text-left">
       <h1>This is a server side rendered gallery</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 grid-gap-4">
-        {props.pictures.map((picture) => (
+        {pictures.map((picture) => (
           <GalleryCard key={picture.id} picture={picture} />
         ))}
       </div>

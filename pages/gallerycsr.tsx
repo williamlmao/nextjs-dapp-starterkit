@@ -1,12 +1,10 @@
 import type { ReactElement } from "react";
 import { SidebarLayout } from "../layouts/SidebarLayout";
 import { useInfiniteGallery } from "../modules/gallery/hooks/useInfiniteGallery";
-import type { NextPageWithLayout } from "./_app";
-import { GalleryCard } from "../modules/gallery/components/GalleryCard";
-import { InfiniteGrid } from "../modules/gallery/components/InfiniteGrid";
 import Head from "next/head";
+import { InfiniteGrid } from "../modules/gallery/components/InfiniteGrid";
 
-const Page: NextPageWithLayout = () => {
+const Page = () => {
   const { pictures, hasNextPage, fetchNextPage } = useInfiniteGallery();
 
   return (

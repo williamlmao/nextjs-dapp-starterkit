@@ -1,9 +1,8 @@
 import type { ReactElement } from "react";
 import Head from "next/head";
 import { SidebarLayout } from "../layouts/SidebarLayout";
-import type { NextPageWithLayout } from "./_app";
 
-const Page: NextPageWithLayout = () => {
+const Page = () => {
   return (
     <div className="w-full text-left">
       <Head>
