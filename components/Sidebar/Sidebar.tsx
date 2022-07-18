@@ -65,13 +65,7 @@ export const Sidebar = () => {
       <div className="relative">
         <motion.div className="flex flex-col pt-8">
           {links.map(({ name, to, id, icon }) => (
-            <Link
-              key={id}
-              href={to}
-              onClick={(e) => {
-                e.stopPropagation();
-              }}
-            >
+            <Link key={id} href={to}>
               <motion.div
                 whileHover={{ scale: 1.05, translateX: 3 }}
                 className={`flex m-2 p-2 text-3xl items-center hover:text-warning hover:bg-base-300 hover:cursor-pointer ${

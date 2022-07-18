@@ -5,9 +5,9 @@ import { Button } from "react-daisyui";
 import { PrimaryLayout } from "../layouts/PrimaryLayout";
 const Page = () => {
   return (
-    <div className="flex flex-col items-center justify-center h-screen ">
+    <div className="flex flex-col items-center justify-center h-screen">
       <Head>
-        <title>Home</title>
+        <title>Tester!</title>
         <meta property="og:title" content="Home" key="title" />
         <meta
           name="description"
@@ -15,7 +15,7 @@ const Page = () => {
         />
       </Head>
       <div className="prose text-center -translate-y-1/2">
-        <h1 className="">This is your homepage</h1>
+        <h1 className="">TESTING</h1>
         <p className="font-inter">
           This page is using the primary layout, which is just the header. For
           an example of a nested layout, go to Dashboard.

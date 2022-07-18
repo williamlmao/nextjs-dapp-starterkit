@@ -6,6 +6,7 @@ const links = [
   { name: "Dashboard", to: "/dashboard", id: 2 },
   { name: "Profile", to: "/profile", id: 3 },
   { name: "Gallery SSR", to: "/galleryssr", id: 4 },
+  { name: "Tester", to: "/tester", id: 5 },
 ];
 
 export const Nav = () => {
