@@ -1,23 +1,41 @@
 import Image from "next/image";
+import { useState } from "react";
 import { Picture } from "../types";
+import { GalleryCardModal } from "./GalleryCardModal";
+import { motion } from "framer-motion";
 
 export const GalleryCard = ({ picture }: { picture: Picture }) => {
-  return (
-    <div className="flex flex-col items-center justify-center bg-base-200 p-4 rounded-md my-4 w-full h-full">
-      <div className="w-full h-full min-h-[100px] lg:min-h-[300px] relative">
-        {picture ? (
-          <Image
-            src={picture.download_url}
-            alt={picture.id}
-            layout="fill"
-            objectFit="contain"
-          />
-        ) : (
-          ""
-        )}
-      </div>
+  const [modalVisible, setModalVisible] = useState<boolean>(false);
 
-      <div>{picture.author}</div>
-    </div>
+  return (
+    <>
+      <GalleryCardModal
+        modalVisible={modalVisible}
+        setModalVisible={setModalVisible}
+        picture={picture}
+      />
+      <motion.div
+        whileHover={{ scale: 1.03 }}
+        className="flex flex-col items-center justify-center bg-base-200 hover:bg-base-300 hover:cursor-pointer p-4 rounded-md m-4"
+        onClick={() => {
+          setModalVisible(true);
+        }}
+      >
+        <div className="w-full min-h-[100px] lg:min-h-[300px] relative">
+          {picture ? (
+            <Image
+              src={picture.download_url}
+              alt={picture.id}
+              layout="fill"
+              objectFit="contain"
+            />
+          ) : (
+            ""
+          )}
+        </div>
+
+        <div>{picture.author}</div>
+      </motion.div>
+    </>
   );
 };

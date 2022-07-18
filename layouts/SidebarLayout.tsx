@@ -18,3 +18,7 @@ export const SidebarLayout: FC<Props> = ({ children }) => {
     </PrimaryLayout>
   );
 };
+
+export const getLayout = (page: React.ReactNode) => (
+  <SidebarLayout>{page}</SidebarLayout>
+);

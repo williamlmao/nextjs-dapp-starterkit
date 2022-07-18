@@ -1,8 +1,10 @@
 import type { ReactElement } from "react";
 import Head from "next/head";
 import { SidebarLayout } from "../layouts/SidebarLayout";
+import type { NextPageWithLayout } from "./_app";
+import { Modal } from "../components/Modal";
 
-const Page = () => {
+const Page: NextPageWithLayout = () => {
   return (
     <div className="w-full text-left">
       <Head>
@@ -14,6 +16,7 @@ const Page = () => {
         />
       </Head>
       <h1>This is the dashboard</h1>
+      <Modal />
     </div>
   );
 };

@@ -1,7 +1,8 @@
 import { Header } from "../components/Header";
-import { FC, useContext } from "react";
+import React, { FC, useContext } from "react";
 import { Theme } from "react-daisyui";
 import { ThemeContext } from "../contexts/ThemeContext";
+import { NextPageWithLayout } from "../pages/_app";
 
 type Props = {
   children: React.ReactNode;
@@ -19,3 +20,7 @@ export const PrimaryLayout: FC<Props> = ({ children }) => {
     </Theme>
   );
 };
+
+export const getLayout = (page: React.ReactNode) => (
+  <PrimaryLayout>{page}</PrimaryLayout>
+);

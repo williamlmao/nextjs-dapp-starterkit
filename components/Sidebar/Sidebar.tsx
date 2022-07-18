@@ -9,6 +9,7 @@ import {
   AiOutlineCamera,
   AiFillCamera,
 } from "react-icons/ai";
+import Link from "next/link";
 
 const links = [
   { name: "Home", to: "/", id: 1, icon: <AiOutlineHome /> },
@@ -64,15 +65,18 @@ export const Sidebar = () => {
       <div className="relative">
         <motion.div className="flex flex-col pt-8">
           {links.map(({ name, to, id, icon }) => (
-            <motion.div key={id} whileHover={{ scale: 1.05, translateX: 3 }}>
-              <motion.a
-                href={to}
-                className={`flex m-2 p-2 text-3xl items-center hover:text-warning hover:bg-base-300 ${
+            <Link
+              key={id}
+              href={to}
+              onClick={(e) => {
+                e.stopPropagation();
+              }}
+            >
+              <motion.div
+                whileHover={{ scale: 1.05, translateX: 3 }}
+                className={`flex m-2 p-2 text-3xl items-center hover:text-warning hover:bg-base-300 hover:cursor-pointer ${
                   to === router.asPath ? "bg-base-200" : ""
                 } rounded-lg`}
-                onClick={(e) => {
-                  e.stopPropagation();
-                }}
               >
                 {icon}
                 <motion.span
@@ -82,8 +86,8 @@ export const Sidebar = () => {
                 >
                   {name}
                 </motion.span>
-              </motion.a>
-            </motion.div>
+              </motion.div>
+            </Link>
           ))}
         </motion.div>
       </div>
