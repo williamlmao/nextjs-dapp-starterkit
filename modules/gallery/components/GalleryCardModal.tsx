@@ -1,13 +1,13 @@
 import { Dialog } from "@headlessui/react";
+import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import { useContext } from "react";
-import { Theme, Button } from "react-daisyui";
+import { Button, Theme } from "react-daisyui";
+import { IoIosClose } from "react-icons/io";
 import { ThemeContext } from "../../../contexts/ThemeContext";
 import { Picture } from "../types";
-import { IoIosClose } from "react-icons/io";
-import { AnimatePresence, motion } from "framer-motion";
 
-export function GalleryCardModal({
+export const GalleryCardModal = ({
   modalVisible,
   setModalVisible,
   picture,
@@ -15,57 +15,51 @@ export function GalleryCardModal({
   modalVisible: boolean;
   setModalVisible: Function;
   picture: Picture;
-}) {
-  const dropIn = {
-    hidden: {
+}) => {
+  const { theme } = useContext(ThemeContext);
+
+  const modalMotion = {
+    initial: {
       opacity: 0,
+      scale: 0.75,
     },
-    visible: {
+    animate: {
       opacity: 1,
+      scale: 1,
       transition: {
-        duration: 2,
-        type: "spring",
-        damping: 25,
-        stiffness: 500,
+        ease: "easeOut",
+        duration: 0.24,
       },
     },
     exit: {
       opacity: 0,
+      scale: 0.75,
+      transition: {
+        ease: "easeIn",
+        duration: 0.15,
+      },
     },
   };
-  const { theme } = useContext(ThemeContext);
+
   return (
     <AnimatePresence>
-      <Dialog
-        open={modalVisible}
-        onClose={() => setModalVisible(false)}
-        className="fixed inset-64 backdrop-blur-sm"
-      >
-        <Theme dataTheme={theme}>
+      {modalVisible && (
+        <Dialog
+          open={modalVisible}
+          onClose={() => setModalVisible(false)}
+          as="div"
+          className="fixed inset-0 z-10 flex items-center justify-center overflow-y-auto backdrop-blur-sm"
+        >
           <motion.div
-            className="fixed flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0"
-            initial={{
-              opacity: 0,
-              scale: 0.75,
-            }}
-            animate={{
-              opacity: 1,
-              scale: 1,
-              transition: {
-                ease: "easeOut",
-                duration: 3,
-              },
-            }}
-            exit={{
-              opacity: 0,
-              scale: 0.75,
-              transition: {
-                ease: "easeIn",
-                duration: 0.15,
-              },
-            }}
+            variants={modalMotion}
+            initial="initial"
+            animate="animate"
+            exit="exit"
           >
-            <Dialog.Panel className="flex flex-col flex-1 z-20 fixed top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 bg-base-200 hover:bg-base-300  p-6 h-[80vh] w-[80vw] rounded-md">
+            <Theme
+              dataTheme={theme}
+              className="w-[80vh] h-[80vh] bg-base-300 p-12  relative rounded-xl flex flex-1 flex-col"
+            >
               <Dialog.Description className="text-4xl text-center mb-4">
                 {picture.author}
               </Dialog.Description>
@@ -85,10 +79,10 @@ export function GalleryCardModal({
               >
                 <IoIosClose className="text-lg" />
               </Button>
-            </Dialog.Panel>
+            </Theme>
           </motion.div>
-        </Theme>
-      </Dialog>
+        </Dialog>
+      )}
     </AnimatePresence>
   );
-}
+};
