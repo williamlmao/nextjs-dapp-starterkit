@@ -1,6 +1,6 @@
 import type { ReactElement } from "react";
 import { Steps } from "react-daisyui";
-import { SidebarLayout } from "../layouts/SidebarLayout";
+import { AppLayout } from "../layouts/AppLayout";
 import type { NextPageWithLayout } from "./_app";
 
 const Page: NextPageWithLayout = () => {
@@ -19,9 +19,9 @@ const Page: NextPageWithLayout = () => {
 
 Page.getLayout = function getLayout(page: ReactElement) {
   return (
-    <SidebarLayout title="Profile" description="A profile page.">
+    <AppLayout title="Profile" description="A profile page.">
       {page}
-    </SidebarLayout>
+    </AppLayout>
   );
 };
 

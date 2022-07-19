@@ -1,7 +1,7 @@
 import { GetServerSideProps } from "next";
 import Head from "next/head";
 import type { ReactElement } from "react";
-import { SidebarLayout } from "../layouts/SidebarLayout";
+import { AppLayout } from "../layouts/AppLayout";
 import { GalleryCard } from "../modules/gallery/components/GalleryCard";
 import { Picture } from "../modules/gallery/types";
 import { NextPageWithLayout } from "./_app";
@@ -25,12 +25,12 @@ const Page: NextPageWithLayout<Props> = ({ pictures }) => {
 
 Page.getLayout = function getLayout(page: ReactElement) {
   return (
-    <SidebarLayout
+    <AppLayout
       title="Gallery (SSR)"
       description="A server-side rendered gallery"
     >
       {page}
-    </SidebarLayout>
+    </AppLayout>
   );
 };
 

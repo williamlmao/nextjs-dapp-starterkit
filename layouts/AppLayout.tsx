@@ -31,7 +31,7 @@ const pageTransitionMotion = {
   },
 };
 
-export const SidebarLayout: FC<Props> = ({ children, title, description }) => {
+export const AppLayout: FC<Props> = ({ children, title, description }) => {
   const router = useRouter();
   return (
     <PrimaryLayout title={title} description={description}>
@@ -39,13 +39,14 @@ export const SidebarLayout: FC<Props> = ({ children, title, description }) => {
         <Sidebar />
         <AnimatePresence exitBeforeEnter>
           <motion.div
-            className="w-full p-8 "
+            className="w-full p-8"
             variants={pageTransitionMotion}
             initial="initial"
             animate="animate"
             exit="exit"
             key={router.pathname}
           >
+            <div className="text-4xl mb-8">{title}</div>
             {children}
           </motion.div>
         </AnimatePresence>

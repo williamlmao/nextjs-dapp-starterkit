@@ -1,6 +1,6 @@
 import type { ReactElement } from "react";
 import Head from "next/head";
-import { SidebarLayout } from "../layouts/SidebarLayout";
+import { AppLayout } from "../layouts/AppLayout";
 import type { NextPageWithLayout } from "./_app";
 import { Modal } from "../components/Modal";
 import { Section } from "../components/Section";
@@ -38,8 +38,8 @@ const Page: NextPageWithLayout = () => {
           </Stats>
         </Section>
         <Section title="Rankings">
-          <div className="flex w-full justify-around">
-            <div className="flex flex-col items-center">
+          <div className="flex flex-col md:flex-row w-full justify-around">
+            <div className="flex flex-col items-center m-2">
               <RadialProgress
                 value={75}
                 size="12rem"
@@ -50,7 +50,7 @@ const Page: NextPageWithLayout = () => {
               </RadialProgress>
               <span className="mt-4">Bananas</span>
             </div>
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center m-2">
               <RadialProgress
                 value={65}
                 size="12rem"
@@ -61,7 +61,7 @@ const Page: NextPageWithLayout = () => {
               </RadialProgress>
               <span className="mt-4">Apples</span>
             </div>
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center m-2">
               <RadialProgress
                 value={81}
                 size="12rem"
@@ -81,12 +81,12 @@ const Page: NextPageWithLayout = () => {
 
 Page.getLayout = function getLayout(page: ReactElement) {
   return (
-    <SidebarLayout
+    <AppLayout
       title="Dashboard"
       description="The dashboard page for this dapp starter kit."
     >
       {page}
-    </SidebarLayout>
+    </AppLayout>
   );
 };
 
