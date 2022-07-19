@@ -4,20 +4,13 @@ import type { ReactElement } from "react";
 import { SidebarLayout } from "../layouts/SidebarLayout";
 import { GalleryCard } from "../modules/gallery/components/GalleryCard";
 import { Picture } from "../modules/gallery/types";
+import { NextPageWithLayout } from "./_app";
 
-const Page = ({ pictures }: { pictures: Picture[] }) => {
-  <Head>
-    <title>Gallery (Server Side Rendered)</title>
-    <meta
-      property="og:title"
-      content="Gallery (Client Side Rendered)"
-      key="title"
-    />
-    <meta
-      name="description"
-      content="A gallery of photos which are client side rendered. Used for comparison with the SSR gallery."
-    />
-  </Head>;
+type Props = {
+  pictures: Picture[];
+};
+
+const Page: NextPageWithLayout<Props> = ({ pictures }) => {
   return (
     <div className="w-full text-left">
       <h1>This is a server side rendered gallery</h1>
@@ -31,7 +24,14 @@ const Page = ({ pictures }: { pictures: Picture[] }) => {
 };
 
 Page.getLayout = function getLayout(page: ReactElement) {
-  return <SidebarLayout>{page}</SidebarLayout>;
+  return (
+    <SidebarLayout
+      title="Gallery (SSR)"
+      description="A server-side rendered gallery"
+    >
+      {page}
+    </SidebarLayout>
+  );
 };
 
 // This gets called on every request

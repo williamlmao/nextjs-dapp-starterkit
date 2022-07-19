@@ -15,11 +15,12 @@ export const Header = () => {
           Logo
         </span>
       </Link>
-      <Nav />
-      <div className="flex">
-        <ThemeToggle />
-        <div className="ml-4">
-          <ConnectButton />
+      <div className="items-center justify-between">
+        <div className="flex">
+          <ThemeToggle />
+          <div className="ml-4">
+            <ConnectButton />
+          </div>
         </div>
       </div>
     </div>

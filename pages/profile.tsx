@@ -1,18 +1,12 @@
 import type { ReactElement } from "react";
+import { Steps } from "react-daisyui";
 import { SidebarLayout } from "../layouts/SidebarLayout";
 import type { NextPageWithLayout } from "./_app";
-import { Steps } from "react-daisyui";
-import Head from "next/head";
 
 const Page: NextPageWithLayout = () => {
   return (
     <div className="w-full text-center">
-      <Head>
-        <title>Profile</title>
-        <meta property="og:title" content="Profile" key="title" />
-        <meta name="description" content="A profile page." />
-      </Head>
-      ;<div>This is the profile page</div>
+      <div>This is the profile page</div>
       <Steps>
         <Steps.Step color="primary">Download repo</Steps.Step>
         <Steps.Step color="primary">Run locally</Steps.Step>
@@ -24,7 +18,11 @@ const Page: NextPageWithLayout = () => {
 };
 
 Page.getLayout = function getLayout(page: ReactElement) {
-  return <SidebarLayout>{page}</SidebarLayout>;
+  return (
+    <SidebarLayout title="Profile" description="A profile page.">
+      {page}
+    </SidebarLayout>
+  );
 };
 
 export default Page;

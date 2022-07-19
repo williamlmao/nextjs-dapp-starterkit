@@ -6,6 +6,7 @@
 - Framer Motion
 - UI library
 - React Icons
+- Next SEO
 
 # What this starterkit handles for you
 
@@ -24,3 +25,5 @@
 # Adjusting Layout
 
 - Change header height in tailwind.config.js
+
+Persistent nested layouts: https://adamwathan.me/2019/10/17/persistent-layout-patterns-in-nextjs/

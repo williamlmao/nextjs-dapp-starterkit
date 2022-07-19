@@ -1,18 +1,15 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
 import { useRouter } from "next/router";
-
+import { useState } from "react";
+import Link from "next/link";
 import {
-  AiOutlineHome,
+  AiFillCamera,
+  AiOutlineCamera,
   AiOutlineDashboard,
   AiOutlineUser,
-  AiOutlineCamera,
-  AiFillCamera,
 } from "react-icons/ai";
-import Link from "next/link";
 
 const links = [
-  { name: "Home", to: "/", id: 1, icon: <AiOutlineHome /> },
   { name: "Dashboard", to: "/dashboard", id: 2, icon: <AiOutlineDashboard /> },
   {
     name: "Gallery (SSR)",
@@ -53,38 +50,41 @@ export const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(true);
 
   return (
-    <motion.div
-      className="h-screen fixed top-[80px] overflow-x-hidden border-r-2 bg-base-100 border-base-200 z-10"
-      animate="rest"
-      initial="rest"
-      variants={sidebarMotion}
-      transition={{ duration: 0.25 }}
-      onClick={() => setIsOpen(!isOpen)}
-      whileHover="hover"
-    >
-      <div className="relative">
-        <motion.div className="flex flex-col pt-8">
-          {links.map(({ name, to, id, icon }) => (
-            <Link key={id} href={to}>
-              <motion.div
-                whileHover={{ scale: 1.05, translateX: 3 }}
-                className={`flex m-2 p-2 text-3xl items-center hover:text-warning hover:bg-base-300 hover:cursor-pointer ${
-                  to === router.asPath ? "bg-base-200" : ""
-                } rounded-lg`}
-              >
-                {icon}
-                <motion.span
-                  variants={itemMotion}
-                  transition={{ duration: 0.25 }}
-                  className="text-base whitespace-nowrap"
+    <>
+      <div className="h-screen  overflow-x-hidden border-r-2 bg-red-100 border-base-200 z-10 min-w-[60px]"></div>
+      <motion.div
+        className="h-screen fixed top-[80px] overflow-x-hidden border-r-2 bg-base-100 border-base-200 z-10"
+        animate="rest"
+        initial="rest"
+        variants={sidebarMotion}
+        transition={{ duration: 0.25 }}
+        onClick={() => setIsOpen(!isOpen)}
+        whileHover="hover"
+      >
+        <div className="relative">
+          <motion.div className="flex flex-col pt-8">
+            {links.map(({ name, to, id, icon }) => (
+              <Link key={id} href={to}>
+                <motion.div
+                  whileHover={{ scale: 1.05, translateX: 3 }}
+                  className={`flex m-2 p-2 text-3xl items-center hover:text-warning hover:bg-base-300 hover:cursor-pointer ${
+                    to === router.asPath ? "bg-base-200" : ""
+                  } rounded-lg`}
                 >
-                  {name}
-                </motion.span>
-              </motion.div>
-            </Link>
-          ))}
-        </motion.div>
-      </div>
-    </motion.div>
+                  {icon}
+                  <motion.span
+                    variants={itemMotion}
+                    transition={{ duration: 0.25 }}
+                    className="text-base whitespace-nowrap"
+                  >
+                    {name}
+                  </motion.span>
+                </motion.div>
+              </Link>
+            ))}
+          </motion.div>
+        </div>
+      </motion.div>
+    </>
   );
 };

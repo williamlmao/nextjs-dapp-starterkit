@@ -41,7 +41,7 @@ const wagmiClient = createClient({
   webSocketProvider,
 });
 
-export type NextPageWithLayout = NextPage & {
+export type NextPageWithLayout<P = {}> = NextPage<P> & {
   getLayout?: (page: ReactElement) => ReactNode;
 };
 
