@@ -1,3 +1,5 @@
+import { ResponsiveH2 } from "./ResponsiveText/TextComponents";
+
 export const Section = ({
   children,
   title,
@@ -9,9 +11,7 @@ export const Section = ({
 }) => {
   return (
     <div className={`w-full p-4 rounded-md shadow-md ${className}`}>
-      <div className="text-xg sm:text-xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-8">
-        {title}
-      </div>
+      <ResponsiveH2>{title}</ResponsiveH2>
       {children}
     </div>
   );

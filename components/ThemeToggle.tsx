@@ -3,6 +3,8 @@ import { useContext } from "react";
 import { BiMoon, BiSun } from "react-icons/bi";
 import { ThemeContext } from "../contexts/ThemeContext";
 
+// ThemeToggle isn't in  /components/Header because it might be used in another menu
+
 export const ThemeToggle = () => {
   const { theme, setTheme } = useContext(ThemeContext);
   const toggleTheme = () => {

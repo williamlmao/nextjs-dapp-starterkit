@@ -12,9 +12,7 @@ module.exports = {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        Inter: ["Inter", "sans-serif"],
-      },
+      fontFamily: {},
       height: {
         header: headerHeight,
       },

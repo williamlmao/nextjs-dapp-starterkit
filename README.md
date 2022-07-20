@@ -1,12 +1,21 @@
-# This starterkit uses
+# Temple UI
 
-- Tailwind
+Temple is a Next.js template/starter kit that combines some of the best React libraries out there to create a blazing fast site that is easy to update.
+
+- Modular
+- Fast
+- Modern
+
+# Libraries
+
+- Tailwind & DaisyUI & Headless UI
 - Wagmi
 - Rainbowkit
 - Framer Motion
 - UI library
 - React Icons
 - Next SEO
+- React-Query
 
 # What this starterkit handles for you
 

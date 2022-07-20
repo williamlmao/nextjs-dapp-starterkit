@@ -14,7 +14,7 @@ const Page: NextPageWithLayout<Props> = ({ pictures }) => {
   return (
     <div className="w-full text-left">
       <h1>This is a server side rendered gallery</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 grid-gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
         {pictures.map((picture) => (
           <GalleryCard key={picture.id} picture={picture} />
         ))}

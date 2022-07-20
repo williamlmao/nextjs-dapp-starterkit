@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import React, { FC } from "react";
 import { Sidebar } from "../components/Sidebar";
-import { PrimaryLayout } from "../layouts/PrimaryLayout";
+import { PrimaryLayout } from "./PrimaryLayout";
 import { useRouter } from "next/router";
 
 type Props = {
@@ -46,7 +46,7 @@ export const AppLayout: FC<Props> = ({ children, title, description }) => {
             exit="exit"
             key={router.pathname}
           >
-            <div className="text-4xl mb-8">{title}</div>
+            <div className="text-3xl font-bold mb-8">{title}</div>
             {children}
           </motion.div>
         </AnimatePresence>

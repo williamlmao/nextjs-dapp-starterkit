@@ -20,6 +20,7 @@ export const PrimaryLayout: FC<Props> = ({ children, title, description }) => {
         description={description}
         openGraph={{ title, description }}
       />
+
       <Header />
       <div className="pt-header">{children}</div>
     </Theme>
