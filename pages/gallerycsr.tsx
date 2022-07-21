@@ -1,15 +1,19 @@
 import type { ReactElement } from "react";
+import { Alert } from "react-daisyui";
 import { AppLayout } from "../layouts/AppLayout";
-import { useInfiniteGallery } from "../modules/gallery/hooks/useInfiniteGallery";
-import Head from "next/head";
 import { InfiniteGrid } from "../modules/gallery/components/InfiniteGrid";
+import { useInfiniteGallery } from "../modules/gallery/hooks/useInfiniteGallery";
 
 const Page = () => {
   const { pictures, hasNextPage, fetchNextPage } = useInfiniteGallery();
 
   return (
     <div className="w-full text-left">
-      <h1>This is a client side rendered gallery</h1>
+      <Alert status="warning" className="mb-4">
+        This is a client-side rendered gallery with infinite scroll and stagger
+        animations with Framer Motion. Click into a photo to see an example of a
+        modal.
+      </Alert>
       <InfiniteGrid
         hasNextPage={hasNextPage}
         fetchNextPage={fetchNextPage}

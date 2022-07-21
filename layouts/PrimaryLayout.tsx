@@ -22,7 +22,7 @@ export const PrimaryLayout: FC<Props> = ({ children, title, description }) => {
       />
 
       <Header />
-      <div className="pt-header">{children}</div>
+      <div className="pt-header bg-base-200">{children}</div>
     </Theme>
   );
 };

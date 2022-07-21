@@ -10,7 +10,7 @@ export const Section = ({
   className?: string;
 }) => {
   return (
-    <div className={`w-full p-4 rounded-md shadow-md ${className}`}>
+    <div className={`w-full p-4 rounded-md shadow-md bg-base-100 ${className}`}>
       <ResponsiveH2>{title}</ResponsiveH2>
       {children}
     </div>

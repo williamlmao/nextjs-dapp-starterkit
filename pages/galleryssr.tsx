@@ -1,6 +1,7 @@
 import { GetServerSideProps } from "next";
 import Head from "next/head";
 import type { ReactElement } from "react";
+import { Alert } from "react-daisyui";
 import { AppLayout } from "../layouts/AppLayout";
 import { GalleryCard } from "../modules/gallery/components/GalleryCard";
 import { Picture } from "../modules/gallery/types";
@@ -13,7 +14,10 @@ type Props = {
 const Page: NextPageWithLayout<Props> = ({ pictures }) => {
   return (
     <div className="w-full text-left">
-      <h1>This is a server side rendered gallery</h1>
+      <Alert status="info" className="mb-4">
+        This is a server-side rendered gallery. Click into a photo to see an
+        example of a modal.
+      </Alert>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
         {pictures.map((picture) => (
           <GalleryCard key={picture.id} picture={picture} />

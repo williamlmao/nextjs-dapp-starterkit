@@ -16,7 +16,7 @@ export const GalleryCard = ({ picture }: { picture: Picture }) => {
       />
       <motion.div
         whileHover={{ scale: 1.03 }}
-        className="flex flex-col items-center justify-center bg-base-200 hover:bg-base-300 hover:cursor-pointer p-4 rounded-md"
+        className="flex flex-col items-center justify-center bg-base-100 hover:bg-base-300 hover:cursor-pointer p-4 rounded-md"
         onClick={() => {
           setModalVisible(true);
         }}
