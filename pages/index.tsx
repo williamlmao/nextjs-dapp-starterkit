@@ -6,8 +6,8 @@ import { NextPageWithLayout } from "./_app";
 
 const Page: NextPageWithLayout = () => {
   return (
-    <div className="flex flex-col items-center justify-center h-screen ">
-      <div className="text-center -translate-y-1/2">
+    <div className="flex flex-col items-center justify-center h-full">
+      <div className="text-center">
         <h1 className="text-6xl font-extrabold">
           A starterkit for all your dapping needs.
         </h1>

@@ -9,7 +9,7 @@ import { Nav } from "./Nav";
 export const Header = () => {
   return (
     <div
-      className={`flex items-center justify-between shadow-md p-4 fixed w-full bg-base-100 z-20 h-header`}
+      className={`flex items-center justify-between shadow-md p-4 w-full bg-base-100 z-20 h-header`}
     >
       <Link href="/">
         <span className="text-3xl font-extrabold hover:cursor-pointer">

@@ -1,5 +1,4 @@
 /** @type {import('tailwindcss').Config} */
-const defaultTheme = require("tailwindcss/defaultTheme");
 const headerHeight = "80px";
 
 module.exports = {
@@ -15,6 +14,7 @@ module.exports = {
       fontFamily: {},
       height: {
         header: headerHeight,
+        screenLessHeader: `[calc(100vh_-_80px)]`,
       },
 
       padding: {
