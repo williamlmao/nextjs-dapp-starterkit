@@ -1,10 +1,6 @@
-# Temple UI
+# Dapp Starter Kit
 
-Temple is a Next.js template/starter kit that combines some of the best React libraries out there to create a blazing fast site that is easy to update.
-
-- Modular
-- Fast
-- Modern
+This is a Next.js typescript template/starter kit that comes preloaded with all of the libraries I like to use in my projects. This repo handles a lot of the boilerplate setup for you.
 
 # Libraries
 
@@ -17,6 +13,10 @@ Temple is a Next.js template/starter kit that combines some of the best React li
 - Next SEO
 - React-Query
 
+### Why Headless UI AND Daisy UI?
+
+Daisy is really great for themeing + some basic components, while Headless provides a lot of awesome features like keyboard accessibility to more complex components.
+
 # What this starterkit handles for you
 
 - Rainbow kit setup
@@ -26,13 +26,9 @@ Temple is a Next.js template/starter kit that combines some of the best React li
 - Sets up persistent layout patterns
 - Adds additional folder structure. Lib, etc.
 
-# Examples contained in this starter kit
+# Installation
 
-- Nested layouts
-- Infinite scrolling galleries
-
-# Adjusting Layout
-
-- Change header height in tailwind.config.js
-
-Persistent nested layouts: https://adamwathan.me/2019/10/17/persistent-layout-patterns-in-nextjs/
+- Clone this repo
+- Update your Alchemy key in \_app.tsx
+- `npm install`
+- `npm run dev`
