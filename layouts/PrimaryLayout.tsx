@@ -14,15 +14,16 @@ export const PrimaryLayout: FC<Props> = ({ children, title, description }) => {
   const { theme } = useContext(ThemeContext);
 
   return (
-    <Theme dataTheme={theme} className="min-h-screen">
+    <Theme dataTheme={theme}>
       <NextSeo
         title={title}
         description={description}
         openGraph={{ title, description }}
       />
-
-      <Header />
-      <div className="pt-header bg-base-200">{children}</div>
+      <div className="flex flex-col h-screen">
+        <Header />
+        <div className="bg-base-200 flex-1 overflow-y-auto">{children}</div>
+      </div>
     </Theme>
   );
 };

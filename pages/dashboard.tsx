@@ -1,10 +1,8 @@
 import type { ReactElement } from "react";
-import Head from "next/head";
+import { Alert, Progress, RadialProgress, Stats } from "react-daisyui";
+import { Section } from "../components/Section";
 import { AppLayout } from "../layouts/AppLayout";
 import type { NextPageWithLayout } from "./_app";
-import { Modal } from "../components/Modal";
-import { Section } from "../components/Section";
-import { Stats, Progress, RadialProgress, Alert } from "react-daisyui";
 
 const Page: NextPageWithLayout = () => {
   return (
